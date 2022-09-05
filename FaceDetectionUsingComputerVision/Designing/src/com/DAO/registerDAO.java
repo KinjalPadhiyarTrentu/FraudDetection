@@ -10,15 +10,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.VO.classVO;
-
+import com.VO.registerVO;
 
 @Repository
-public class classDAO
+public class registerDAO
 {
+
 	@Autowired
 	SessionFactory sessionfactory;
 	
-	public void insertclass(classVO vo)
+	public void insert(registerVO vo)
 	{
 		Session session = sessionfactory.openSession();
 		Transaction tr = session.beginTransaction();
@@ -26,12 +27,12 @@ public class classDAO
 		tr.commit();
 	}
 	
-	public List searchclass(classVO v) 
+	public List searchStudent(registerVO v) 
 	{
 		Session session = sessionfactory.openSession();
-		Query q = session.createQuery("from classVO");
-		List classls=q.list();
-		return classls;
+		Query q = session.createQuery("from registerVO");
+		List ls=q.list();
+		return ls;
 	}
-
+	
 }
