@@ -77,6 +77,19 @@ compare them with the actual encodings. <br/>
 
 <img width="257" alt="image" src="https://user-images.githubusercontent.com/99310137/188344314-0e178630-c7f0-4df5-8a73-64619c0b86b6.png">
 
+#### MVC structure:
+
+<img width="404" alt="image" src="https://user-images.githubusercontent.com/99310137/188362841-86b0b78e-463f-4799-8d0a-ee07d31f6942.png">
+
+#### Use Case Diagram:
+
+![image](https://user-images.githubusercontent.com/99310137/188363081-077743da-4f87-4181-812d-44a31aaa9591.png)
+
+#### Sequence Diagram:
+
+![image](https://user-images.githubusercontent.com/99310137/188363228-2d3591ea-51d7-43ff-bc60-f6ed83b73ab5.png)
+
+
 ### User Interface and Implementation:
 
 <img width="480" alt="image" src="https://user-images.githubusercontent.com/99310137/188345214-51ef6c88-894e-438c-af75-36f22660a5ac.png">
