@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
 <head>
@@ -9,14 +11,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="AdminResources/images/favicon.png">
     <title>Monster Admin Template - The Most Complete & Trusted Bootstrap 4 Admin Template</title>
     <!-- Bootstrap Core CSS -->
     <link href="AdminResources/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <!-- Custom CSS- -->
     <link href="AdminResources/css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
-    <link href="AdminResources/css/colors/blue.css" id="theme" rel="stylesheet">
+    <link href="AdminResources/css/blue.css" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -25,11 +27,10 @@
 <![endif]-->
 </head>
 
-<body >
+<body class="fix-header card-no-border">
 
-<%@taglib prefix="f" uri="http://www.springframework.org/tags/form"%>
-	<%@taglib prefix="k" uri="http://java.sun.com/jstl/core_rt"%>
-	
+<%@taglib prefix="k1" uri="http://java.sun.com/jstl/core_rt"%>
+
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -51,21 +52,7 @@
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <aside class="left-sidebar">
-            <!-- Sidebar scroll-->
-            <jsp:include page="menu.jsp"></jsp:include>
-            <!-- End Sidebar scroll-->
-            <!-- Bottom points-->
-            <div class="sidebar-footer">
-                <!-- item-->
-                <a href="" class="link" data-toggle="tooltip" title="Settings"><i class="ti-settings"></i></a>
-                <!-- item-->
-                <a href="" class="link" data-toggle="tooltip" title="Email"><i class="mdi mdi-gmail"></i></a>
-                <!-- item-->
-                <a href="" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
-            </div>
-            <!-- End Bottom points-->
-        </aside>
+        <jsp:include page="menu.jsp"></jsp:include>
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
@@ -80,23 +67,7 @@
                 <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
-                <!-- <div class="row page-titles">
-                    <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">Forms Validation</h3>
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Form Validation</li>
-                        </ol>
-                    </div>
-                    <div class="col-md-6 col-4 align-self-center">
-                        <button class="right-side-toggle waves-effect waves-light btn-info btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
-                        <button class="btn pull-right hidden-sm-down btn-success"><i class="mdi mdi-plus-circle"></i> Create</button>
-                        <div class="dropdown pull-right m-r-10 hidden-sm-down">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> January 2017 </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> <a class="dropdown-item" href="#">February 2017</a> <a class="dropdown-item" href="#">March 2017</a> <a class="dropdown-item" href="#">April 2017</a> </div>
-                        </div>
-                    </div>
-                </div> -->
+                
                 <!-- ============================================================== -->
                 <!-- End Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
@@ -107,24 +78,36 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Add class</h4>
                                 
-                                <f:form class="m-t-40"  id="classform" action="classcontroller.html" method="post" modelAttribute="class">
-                                    <div class="form-group">
-                                        <h5>class Name<span class="text-danger">*</span></h5>
-                                        <div class="controls">
-                                            <f:input path="className"   class="form-control" required="required" data-validation-required-message="This field is required"></f:input> </div>
-                                    </div>
-                                    <%-- <div class="form-group">
-                                        <h5>class Department<span class="text-danger">*</span></h5>
-                                        <div class="controls">
-                                            <f:input path="classDepartment"  class="form-control" required="required" data-validation-required-message="This field is required"></f:input> </div>
-                                    </div>
-                                     --%><div class="text-xs-right">
-                                        <button type="submit" class="btn btn-info">Submit</button>
-                                        <button type="reset" class="btn btn-inverse">Cancel</button>
-                                    </div>
-                                </f:form>
+                                <div class="table-responsive m-t-40">
+                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>class ID</th>
+                                                <th>class Name</th>
+                                 
+                                            </tr>
+                                        </thead>
+                                        <!-- <tfoot>
+                                            <tr>
+                                                <th>class ID</th>
+                                                <th>class Name</th>
+                                                <th>class Department</th>
+                                            </tr>
+                                        </tfoot> -->
+                                         <k1:forEach items="${view}" var="x">
+                                        <tbody>
+                                            
+                                            <tr>
+                                                <td>${x.classId}</td>
+                                                <td>${x.className}</td>
+                                 				<td><a href="edit.html?id=${x.id}">edit</a></td>
+                                            </tr>
+                                            
+                                         </tbody>
+                                         </k1:forEach>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -196,6 +179,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
+            <jsp:include page="footer.jsp"></jsp:include>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
@@ -224,15 +208,63 @@
     <script src="AdminResources/js/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
     <script src="AdminResources/js/custom.min.js"></script>
-    <script src="AdminResources/js/validation.js"></script>
+    <!-- This is data table -->
+    <script src="AdminResources/js/jquery.dataTables.min.js"></script>
+    <!-- start - This is for export functionality only -->
+    <script src="AdminResources/js/dataTables.buttons.min.js"></script>
+    <script src="AdminResources/js/buttons.flash.min.js"></script>
+    <script src="AdminResources/js/jszip.min.js"></script>
+    <script src="AdminResources/js/pdfmake.min.js"></script>
+    <script src="AdminResources/js/vfs_fonts.js"></script>
+    <script src="AdminResources/js/buttons.html5.min.js"></script>
+    <script src="AdminResources/js/buttons.print.min.js"></script>
+    <!-- end - This is for export functionality only -->
     <script>
-    ! function(window, document, $) {
-        "use strict";
-        $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(), $(".skin-square input").iCheck({
-            checkboxClass: "icheckbox_square-green",
-            radioClass: "iradio_square-green"
-        }), $(".touchspin").TouchSpin(), $(".switchBootstrap").bootstrapSwitch();
-    }(window, document, jQuery);
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+        $(document).ready(function() {
+            var table = $('#example').DataTable({
+                "columnDefs": [{
+                    "visible": false,
+                    "targets": 2
+                }],
+                "order": [
+                    [2, 'asc']
+                ],
+                "displayLength": 25,
+                "drawCallback": function(settings) {
+                    var api = this.api();
+                    var rows = api.rows({
+                        page: 'current'
+                    }).nodes();
+                    var last = null;
+                    api.column(2, {
+                        page: 'current'
+                    }).data().each(function(group, i) {
+                        if (last !== group) {
+                            $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+                            last = group;
+                        }
+                    });
+                }
+            });
+            // Order by the grouping
+            $('#example tbody').on('click', 'tr.group', function() {
+                var currentOrder = table.order()[0];
+                if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+                    table.order([2, 'desc']).draw();
+                } else {
+                    table.order([2, 'asc']).draw();
+                }
+            });
+        });
+    });
+    $('#example23').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            
+        ]
+    });
     </script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
